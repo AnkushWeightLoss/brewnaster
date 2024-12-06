@@ -1,0 +1,148 @@
+/* About Page Specific Styles */
+.about-page {
+    background-color: var(--background-color);
+}
+
+.about-hero {
+    background: linear-gradient(rgba(74, 44, 42, 0.8), rgba(74, 44, 42, 0.8)), 
+                url('/api/placeholder/1200/400');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.about-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.our-story {
+    background-color: white;
+    padding: 50px 5%;
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+.story-content p {
+    color: var(--secondary-color);
+    line-height: 1.8;
+}
+
+.team {
+    background-color: var(--background-color);
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.team h2 {
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    color: var(--primary-color);
+    padding: 15px 20px 5px;
+    font-size: 1.3rem;
+}
+
+.team-member p {
+    color: var(--secondary-color);
+    padding: 0 20px 15px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+
+    .about-hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Additional Hover and Interaction Effects */
+.team-member,
+.product-detail {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member::after,
+.product-detail::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--accent-color);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover::after,
+.product-detail:hover::after {
+    transform: translateX(0);
+}
